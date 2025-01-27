@@ -61,4 +61,21 @@ $(document).ready(function () {
     $(document).on('click', '.delete-btn', function () {
         $(this).closest('tr').remove();
     });
+
+    // Filter Orders based on slider value
+    $('#orderValueSlider').on('input', function () {
+        const filterValue = parseFloat($(this).val());
+        console.log(`Filtering orders with value greater than: ${filterValue}`);
+
+        $('table tbody tr').each(function () {
+            const orderValueText = $(this).find('td').eq(1).text().replace('$', '').trim();
+            const orderValue = parseFloat(orderValueText);
+
+            if (orderValue > filterValue) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
 });
