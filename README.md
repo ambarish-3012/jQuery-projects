@@ -1,17 +1,5 @@
-About the code
-This is a code for an application that can help you practise your JQuery skills by implementing the tasks provided in the project https://github.com/users/genai-jerry/projects/2
+This ReadeMe File provides the second use-case. Below is the description:
 
+Implement the "Filter Orders". On selecting the slider, the table should be updated to show only the orders that are more than the order value
 
-
-
-
-
-About Author:
-Jerry Kurian
-Founder and Chief mentor at GenAI People
-LinkedIn: https://www.linkedin.com/in/jerryk/
-
-About GenAI People
-GenAI People is an organisation focused on helping professionals transition to Generative AI through its GenAI Leap program. GenAI Leap is a self-paced mentoring program for working professionals.
-
-To know more visit https://learning.genaipeople.com
+I have built the code on top of the main project
