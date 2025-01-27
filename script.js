@@ -61,4 +61,28 @@ $(document).ready(function () {
     $(document).on('click', '.delete-btn', function () {
         $(this).closest('tr').remove();
     });
+
+    // Save data to local storage
+    $('#save-orders-btn').click(function () {
+        const orders = [];
+
+        $('table tbody tr').each(function () {
+            const orderId = $(this).find('td').eq(0).text().trim();
+            const orderValue = $(this).find('td').eq(1).text().replace('$', '').trim();
+            const orderQuantity = $(this).find('td').eq(2).text().trim();
+
+            if (orderId && orderValue && orderQuantity) {
+                orders.push({
+                    orderId: orderId,
+                    orderValue: parseFloat(orderValue),
+                    orderQuantity: parseInt(orderQuantity, 10),
+                });
+            }
+        });
+
+        // Save to local storage in JSON format
+        localStorage.setItem('orders', JSON.stringify(orders));
+        alert('Orders saved successfully!');
+        console.log('Saved Orders:', orders);
+    });
 });
